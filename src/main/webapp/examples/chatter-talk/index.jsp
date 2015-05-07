@@ -24,6 +24,7 @@
     <script type="text/javascript" src="/sdk/js/xd.js"></script>
     <script type="text/javascript" src="/sdk/js/client.js"></script>
     <script type="text/javascript" src="/scripts/json2.js"></script>
+    <script type="text/javascript" src="https://cs21.salesforce.com/canvas/sdk/js/29.0/canvas-all.js"/>
     <script type="text/javascript" src="/examples/chatter-talk/chatter-talk.js"></script>
 
 </head>
@@ -58,6 +59,24 @@
             chatterTalk.init(sr, "chatter-submit", "speech-input-field", function(data) {
                 Sfdc.canvas.byId('status').innerHTML = data.statusText;
             });
+            
+            
+            //-------------->
+            Sfdc.canvas.client.subscribe(sr.client,{name : 'pnc.testAction', onData : function (data) {
+                
+                var url = sr.context.links.chatterFeedsUrl+"/news/"+sr.context.user.userId+"/feed-items";
+                var body = {body : {messageSegments : [{type: "Text", text: "We are " + data.status}]}};
+                Sfdc.canvas.client.ajax(url,
+                {client : sr.client,
+                method: 'POST',
+                contentType: "application/json",
+                data: JSON.stringify(body),
+                success : function(data) {
+                if (201 === data.status) {
+                console.log('Success');
+                }
+            }
+
         </script>
     </section>
 </div>
