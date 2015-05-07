@@ -40,10 +40,6 @@
             
             
             ///Start-->
-            var sr = JSON.parse('<%=signedRequestJson%>');   
-   // Save the token   
-   Sfdc.canvas.oauth.token(sr.oauthToken);   
-   Sfdc.canvas.byId('username').innerHTML = sr.context.user.fullName;   
                
    //Prepare a query url to query leads data from Salesforce   
    var queryUrl = sr.context.links.queryUrl+"?q=SELECT+id+,+name+,+company+,+phone+from+Lead";   
@@ -72,5 +68,6 @@
 <body>
     <br/>
     <h1>Hello <span id='username'></span></h1>
+    <leaddetails>leaddetails</leaddetails>
 </body>
 </html>
