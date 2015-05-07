@@ -75,6 +75,7 @@
 </head>
 <body>
     <br/>
+    <h2>This Page is a Canvas Application hosted on the Heroku....</h2>
     <h1>Hello <span id='username'></span></h1>
     <leaddetails>leaddetails <span id='leaddetails'></span></leaddetails>
 </body>
