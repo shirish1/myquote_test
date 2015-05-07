@@ -64,7 +64,7 @@
             //-------------->
             Sfdc.canvas.client.subscribe(sr.client,{name : 'pnc.testAction', onData : function (data) {
                 
-                var url = sr.context.links.chatterFeedsUrl+"/news/"+sr.context.user.userId+"/feed-items";
+                var url = sr.context.links.chatterFeedsUrl+"/post/"+sr.context.user.userId+"/feed-items";
                 var body = {body : {messageSegments : [{type: "Text", text: "We are " + data.status}]}};
                 Sfdc.canvas.client.ajax(url,
                 {client : sr.client,
