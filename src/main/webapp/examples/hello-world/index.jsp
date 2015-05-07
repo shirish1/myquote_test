@@ -63,6 +63,14 @@
             
         });
 
+
+//--------------->
+
+        Sfdc.canvas.client.publish(sr.client, { 
+            name: 'myns.sendVal', 
+            payload: { value : pValue} });
+
+    
     </script>
 </head>
 <body>
