@@ -54,7 +54,7 @@
                     for (var leadPos=0; leadPos < returnedLeads.length; leadPos = leadPos + 1) {   
                       optionStr = optionStr + '<tr><td><input type="checkbox" onclick="setCheckedValues(\''+returnedLeads[leadPos].Name+'\',\''+returnedLeads[leadPos].Phone+'\');" name="checkedLeads" value="'+returnedLeads[leadPos].Id+'"></td><td>'+ returnedLeads[leadPos].Id + '</td><td>' + returnedLeads[leadPos].Name + '</td><td>' + returnedLeads[leadPos].Company + '</td><td>' + returnedLeads[leadPos].Phone + '</td></tr>';   
                    } //end for   
-                   leadStr=leadStr+'</table>';   
+                   leadStr=optionStr+'</table>';   
           
                    Sfdc.canvas.byId('leaddetails').innerHTML = leadStr;   
                  }}); //end success callback   
